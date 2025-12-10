@@ -1,29 +1,25 @@
-/* Custom background color for the whole page */
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #e3dbc8; /* warm beige */
-  color: #38393b; /* dark charcoal for text */
+  background-color: #e3dbc8;
+  color: #38393b;
 }
 
-/* Wrapper div for layout */
 .page-wrapper {
   max-width: 960px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Header styling */
 header {
   text-align: center;
   padding: 30px 10px;
-  background-color: #38393b; /* deep charcoal */
-  color: #f1eee3; /* light cream */
+  background-color: #38393b;
+  color: #f1eee3;
   border-radius: 8px;
   margin-bottom: 20px;
 }
 
-/* Top navigation */
 .main-nav {
   margin-bottom: 15px;
 }
@@ -39,7 +35,7 @@ header {
 
 .main-nav a {
   text-decoration: none;
-  color: #c7b99e; /* warm tan accent */
+  color: #c7b99e;
   font-weight: 600;
   font-size: 0.95rem;
 }
@@ -57,12 +53,11 @@ header h1 {
   font-size: 0.95rem;
 }
 
-/* Anchor link that jumps to the video section */
 .jump-link {
   display: inline-block;
   margin-top: 10px;
   text-decoration: none;
-  color: #c7b99e; /* same accent as nav */
+  color: #c7b99e;
   font-weight: bold;
 }
 
@@ -70,20 +65,18 @@ header h1 {
   text-decoration: underline;
 }
 
-/* General section styling */
 .content-section {
-  background-color: #f1eee3; /* lighter panel against darker body */
+  background-color: #f1eee3;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(56, 57, 59, 0.08); /* soft charcoal shadow */
+  box-shadow: 0 2px 6px rgba(56, 57, 59, 0.08);
 }
 
 .content-section h2 {
   margin-top: 0;
 }
 
-/* List section specific styling */
 .list-section ol {
   padding-left: 20px;
 }
@@ -94,7 +87,6 @@ header h1 {
   margin-bottom: 10px;
 }
 
-/* Gallery div styling */
 .gallery {
   text-align: center;
 }
@@ -108,18 +100,16 @@ header h1 {
 
 .caption {
   font-size: 0.9rem;
-  color: #505153; /* medium gray for secondary text */
+  color: #505153;
 }
 
-/* Video section div styling */
 .video-section {
   text-align: center;
 }
 
-/* Keeps the video responsive */
 .video-wrapper {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   border-radius: 8px;
@@ -133,15 +123,12 @@ header h1 {
   height: 100%;
 }
 
-/* Footer div styling */
 footer {
   text-align: center;
   font-size: 0.85rem;
-  color: #505153; /* matches caption color */
+  color: #505153;
   padding: 10px 0 20px 0;
 }
-
-/* Resume layout */
 
 .resume {
   max-width: 1000px;
@@ -179,8 +166,6 @@ footer {
   grid-template-columns: 1fr 2fr;
 }
 
-/* Sidebar */
-
 .resume-sidebar {
   background-color: #1b3a57;
   color: #ffffff;
@@ -196,14 +181,10 @@ footer {
   text-decoration: none;
 }
 
-/* Main content */
-
 .resume-main {
   padding: 2rem 2.5rem;
   background-color: #ffffff;
 }
-
-/* Blocks and headings */
 
 .resume-block {
   margin-bottom: 2rem;
@@ -236,8 +217,6 @@ footer {
   background-color: #0b8fad;
 }
 
-/* Text bits */
-
 .resume-contact-item {
   margin: 0 0 0.35rem;
   font-size: 0.95rem;
@@ -260,8 +239,6 @@ footer {
   font-weight: 600;
 }
 
-/* Lists */
-
 .resume-list {
   margin: 0.2rem 0 0.4rem 1.1rem;
   padding: 0;
@@ -271,8 +248,6 @@ footer {
 .resume-list li {
   margin-bottom: 0.25rem;
 }
-
-/* Jobs */
 
 .resume-job {
   position: relative;
@@ -320,8 +295,6 @@ footer {
   letter-spacing: 0.12em;
   color: #c7d0e0;
 }
-
-/* Responsive */
 
 @media (max-width: 840px) {
   .resume-body {
