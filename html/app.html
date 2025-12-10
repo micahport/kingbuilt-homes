@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>App | KingBuilt Homes</title>
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    .home-price-game {
+      margin-top: 2rem;
+      padding: 1.75rem;
+      border-radius: 1.25rem;
+      background: #f1eee3; 
+      color: #38393b;      
+      box-shadow: 0 15px 30px rgba(56, 57, 59, 0.18);
+      border: 1px solid #d1c7b2;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .home-price-game h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.7rem;
+      letter-spacing: 0.03em;
+      color: #38393b;
+    }
+
+    .home-price-game p.game-subtitle {
+      margin: 0 0 1rem;
+      font-size: 0.98rem;
+      color: #707170; /* soft gray text */
+    }
+
+    .home-price-game p.game-range {
+      margin: 0 0 1.4rem;
+      font-size: 0.9rem;
+      color: #7f8179;
+    }
+
+    .home-game-input-row {
+      margin-bottom: 0.9rem;
+    }
+
+    .home-game-input-wrap {
+      position: relative;
+      max-width: 100%;
+    }
+
+    .home-game-input-wrap span.currency {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9c9d94;
+      font-size: 0.95rem;
+    }
+
+    .home-game-input-wrap input[type="number"] {
+      width: 100%;
+      padding: 0.65rem 0.8rem 0.65rem 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid #c9c2ae;
+      background: #f7f4ea;
+      color: #38393b;
+      font-size: 1rem;
+      outline: none;
+      box-sizing: border-box;
+      transition: border-color 120ms ease, box-shadow 120ms ease, transform 80ms ease;
+    }
+
+    .home-game-input-wrap input[type="number"]::placeholder {
+      color: #a5a49b;
+    }
+
+    .home-game-input-wrap input[type="number"]:focus {
+      border-color: #c7b99e;
+      box-shadow:
+        0 0 0 1px rgba(199, 185, 158, 0.9),
+        0 12px 24px rgba(56, 57, 59, 0.18);
+      transform: translateY(-1px);
+    }
+
+    .home-game-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      margin-bottom: 0.9rem;
+    }
+
+    .home-game-btn {
+      cursor: pointer;
+      border-radius: 0.75rem;
+      border: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.65rem 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 80ms ease, box-shadow 120ms ease, filter 120ms ease,
+                  background 120ms ease;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
+    .home-game-btn:active {
+      transform: translateY(1px) scale(0.99);
+      box-shadow: none;
+      filter: brightness(0.96);
+    }
+
+    .home-game-btn.primary {
+      background: linear-gradient(135deg, #c7b99e, #b7a98a); /* warm tan button */
+      color: #38393b;
+      box-shadow:
+        0 10px 28px rgba(56, 57, 59, 0.25),
+        0 0 0 1px rgba(56, 57, 59, 0.1);
+    }
+
+    .home-game-btn.secondary {
+      background: #38393b;   /* charcoal secondary button */
+      color: #f1eee3;
+      border: 1px solid #58595c;
+      box-shadow:
+        0 8px 20px rgba(56, 57, 59, 0.25),
+        0 0 0 1px rgba(56, 57, 59, 0.15);
+      font-size: 0.85rem;
+      padding: 0.45rem 0.8rem;
+    }
+
+    .home-game-help {
+      font-size: 0.82rem;
+      color: #7b7d75;
+      margin-bottom: 0.85rem;
+    }
+
+    .home-game-help strong {
+      color: #38393b;
+      font-weight: 600;
+    }
+
+    .home-game-feedback {
+      margin-top: 0.4rem;
+      padding: 0.65rem 0.8rem;
+      border-radius: 0.75rem;
+      font-size: 0.93rem;
+      background: #f7f4ea;
+      border: 1px solid #d6ccb5;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      min-height: 2.5rem;
+      color: #38393b;
+    }
+
+    .home-game-feedback-icon {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #a5a49b;
+      flex-shrink: 0;
+    }
+
+    .home-game-feedback.muted .home-game-feedback-icon {
+      background: #a5a49b;
+    }
+
+    .home-game-feedback.hot .home-game-feedback-icon {
+      background: #b7a98a; /* warm tan */
+    }
+
+    .home-game-feedback.cold .home-game-feedback-icon {
+      background: #80838a; /* cool gray */
+    }
+
+    .home-game-feedback.exact .home-game-feedback-icon {
+      background: #7c8b6e; /* muted green */
+    }
+
+    .home-game-stats {
+      margin-top: 0.9rem;
+      font-size: 0.86rem;
+      color: #7b7d75;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .home-game-stats span.value {
+      color: #38393b;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .home-price-game {
+        padding: 1.3rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <header id="top">
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="app.html">App</a></li>
+        </ul>
+      </nav>
+
+      <h1>KingBuilt Homes</h1>
+      <p class="tagline">Building king worthy homes and communities that work beautifully every day.</p>
+    </header>
+
+    <div class="content-section intro">
+      <h2>Resume</h2>
+      <p>
+        View or download the PDF version of my resume below.
+      </p>
+    </div>
+
+    <!-- Home price guessing game -->
+    <div class="content-section">
+      <div class="home-price-game">
+        <h2>US Home Price Guessing Game</h2>
+        <p class="game-subtitle">
+          Try to guess the price of an "average" home in the United States.
+        </p>
+        <p class="game-range">
+          I have picked a secret price between <strong>$200,000</strong> and <strong>$800,000</strong>.
+          Type your guess in whole dollars.
+        </p>
+
+        <div class="home-game-input-row">
+          <div class="home-game-input-wrap">
+            <span class="currency">$</span>
+            <input
+              type="number"
+              id="homeGuessInput"
+              placeholder="350000"
+              min="200000"
+              max="800000"
+            >
+          </div>
+        </div>
+
+        <div class="home-game-buttons">
+          <button class="home-game-btn primary" id="homeGuessBtn">Guess</button>
+          <button class="home-game-btn secondary" id="homeResetBtn" type="button">
+            New price
+          </button>
+        </div>
+
+        <div class="home-game-help">
+          You will get hints if you are too high, too low, or very close.
+          Try to get it in as few guesses as possible.
+        </div>
+
+        <div class="home-game-feedback muted" id="homeFeedback">
+          <div class="home-game-feedback-icon"></div>
+          <div class="home-game-feedback-text">
+            Start by entering a price and clicking Guess.
+          </div>
+        </div>
+
+        <div class="home-game-stats">
+          <div>Attempts this round: <span class="value" id="homeAttempts">0</span></div>
+          <div>Best game (fewest attempts): <span class="value" id="homeBest">-</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <object
+        data="resume.pdf"
+        type="application/pdf"
+        width="100%"
+        height="800px"
+      >
+        <p>
+          Your browser cannot display PDFs directly.
+          <a href="resume.pdf">Download the resume PDF</a>.
+        </p>
+      </object>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 KingBuilt Homes</p>
+    </footer>
+
+  </div>
+
+  <!-- Game script -->
+  <script>
+    (function () {
+      var MIN_PRICE = 200000;
+      var MAX_PRICE = 800000;
+
+      var secretPrice;
+      var attempts;
+      var bestScore = null;
+
+      var input = document.getElementById("homeGuessInput");
+      var guessBtn = document.getElementById("homeGuessBtn");
+      var resetBtn = document.getElementById("homeResetBtn");
+      var feedbackBox = document.getElementById("homeFeedback");
+      var feedbackText = feedbackBox.querySelector(".home-game-feedback-text");
+      var attemptsSpan = document.getElementById("homeAttempts");
+      var bestSpan = document.getElementById("homeBest");
+
+      function formatMoney(value) {
+        return value.toLocaleString("en-US", {
+          maximumFractionDigits: 0
+        });
+      }
+
+      function pickNewPrice() {
+        secretPrice = Math.floor(
+          Math.random() * (MAX_PRICE - MIN_PRICE + 1)
+        ) + MIN_PRICE;
+        attempts = 0;
+        attemptsSpan.textContent = attempts;
+        feedbackBox.className = "home-game-feedback muted";
+        feedbackText.textContent =
+          "A new secret home price has been chosen. Start guessing.";
+        input.value = "";
+        input.focus();
+      }
+
+      function updateBestScore() {
+        if (bestScore === null || attempts < bestScore) {
+          bestScore = attempts;
+          bestSpan.textContent = bestScore + " attempt" + (bestScore === 1 ? "" : "s");
+        }
+      }
+
+      function setFeedback(message, tone) {
+        var base = "home-game-feedback";
+        if (tone === "hot") {
+          base += " hot";
+        } else if (tone === "cold") {
+          base += " cold";
+        } else if (tone === "exact") {
+          base += " exact";
+        } else {
+          base += " muted";
+        }
+        feedbackBox.className = base;
+        feedbackText.textContent = message;
+      }
+
+      function handleGuess() {
+        var raw = input.value.trim();
+        var guess = parseInt(raw, 10);
+
+        if (!raw) {
+          setFeedback("Please enter a number before guessing.", "muted");
+          input.focus();
+          return;
+        }
+
+        if (isNaN(guess)) {
+          setFeedback("That does not look like a valid number.", "muted");
+          input.focus();
+          return;
+        }
+
+        if (guess < MIN_PRICE || guess > MAX_PRICE) {
+          setFeedback(
+            "Keep your guess between $" +
+              formatMoney(MIN_PRICE) +
+              " and $" +
+              formatMoney(MAX_PRICE) +
+              ".",
+            "muted"
+          );
+          return;
+        }
+
+        attempts += 1;
+        attemptsSpan.textContent = attempts;
+
+        var difference = Math.abs(guess - secretPrice);
+
+        if (guess === secretPrice) {
+          setFeedback(
+            "Exactly right. The secret price was $" +
+              formatMoney(secretPrice) +
+              ". Great work.",
+            "exact"
+          );
+          updateBestScore();
+          return;
+        }
+
+        var direction = guess > secretPrice ? "high" : "low";
+        var intensity;
+        var tone;
+
+        if (difference > 120000) {
+          intensity = "way too " + direction;
+          tone = "cold";
+        } else if (difference > 60000) {
+          intensity = "too " + direction;
+          tone = "cold";
+        } else if (difference > 25000) {
+          intensity = "a bit " + direction;
+          tone = "hot";
+        } else {
+          intensity = "very close, just a little too " + direction;
+          tone = "hot";
+        }
+
+        setFeedback(
+          "Your guess of $" +
+            formatMoney(guess) +
+            " is " +
+            intensity +
+            ".",
+          tone
+        );
+      }
+
+      guessBtn.addEventListener("click", handleGuess);
+
+      input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          handleGuess();
+        }
+      });
+
+      resetBtn.addEventListener("click", function () {
+        pickNewPrice();
+      });
+
+      pickNewPrice();
+    })();
+  </script>
+</body>
+</html>

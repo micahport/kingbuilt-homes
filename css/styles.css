@@ -1,0 +1,339 @@
+/* Custom background color for the whole page */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e3dbc8; /* warm beige */
+  color: #38393b; /* dark charcoal for text */
+}
+
+/* Wrapper div for layout */
+.page-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styling */
+header {
+  text-align: center;
+  padding: 30px 10px;
+  background-color: #38393b; /* deep charcoal */
+  color: #f1eee3; /* light cream */
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Top navigation */
+.main-nav {
+  margin-bottom: 15px;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #c7b99e; /* warm tan accent */
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+header h1 {
+  margin-bottom: 5px;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* Anchor link that jumps to the video section */
+.jump-link {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #c7b99e; /* same accent as nav */
+  font-weight: bold;
+}
+
+.jump-link:hover {
+  text-decoration: underline;
+}
+
+/* General section styling */
+.content-section {
+  background-color: #f1eee3; /* lighter panel against darker body */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(56, 57, 59, 0.08); /* soft charcoal shadow */
+}
+
+.content-section h2 {
+  margin-top: 0;
+}
+
+/* List section specific styling */
+.list-section ol {
+  padding-left: 20px;
+}
+
+.list-section ul {
+  padding-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* Gallery div styling */
+.gallery {
+  text-align: center;
+}
+
+.art-image {
+  max-width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.caption {
+  font-size: 0.9rem;
+  color: #505153; /* medium gray for secondary text */
+}
+
+/* Video section div styling */
+.video-section {
+  text-align: center;
+}
+
+/* Keeps the video responsive */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer div styling */
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #505153; /* matches caption color */
+  padding: 10px 0 20px 0;
+}
+
+/* Resume layout */
+
+.resume {
+  max-width: 1000px;
+  margin: 2rem auto;
+  background-color: #f5f7fb;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.resume-header {
+  padding: 2rem 2.5rem 1.5rem;
+  text-align: center;
+  background-color: #ffffff;
+  border-bottom: 3px solid #1b3a57;
+}
+
+.resume-name {
+  font-size: 2.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #1b3a57;
+  margin: 0;
+}
+
+.resume-name span {
+  font-weight: 400;
+  color: #34495e;
+}
+
+.resume-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+/* Sidebar */
+
+.resume-sidebar {
+  background-color: #1b3a57;
+  color: #ffffff;
+  padding: 2rem;
+}
+
+.resume-sidebar a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.resume-sidebar a:hover {
+  text-decoration: none;
+}
+
+/* Main content */
+
+.resume-main {
+  padding: 2rem 2.5rem;
+  background-color: #ffffff;
+}
+
+/* Blocks and headings */
+
+.resume-block {
+  margin-bottom: 2rem;
+}
+
+.resume-block-title {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+  color: inherit;
+  position: relative;
+}
+
+.resume-sidebar .resume-block-title {
+  color: #a9c3e2;
+}
+
+.resume-main .resume-block-title {
+  color: #1b3a57;
+}
+
+.resume-block-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin-top: 0.4rem;
+  background-color: #0b8fad;
+}
+
+/* Text bits */
+
+.resume-contact-item {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+}
+
+.resume-subsection {
+  margin-bottom: 1.3rem;
+}
+
+.resume-subtitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.2rem;
+  opacity: 0.8;
+}
+
+.resume-subheading {
+  margin: 0 0 0.4rem;
+  font-weight: 600;
+}
+
+/* Lists */
+
+.resume-list {
+  margin: 0.2rem 0 0.4rem 1.1rem;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.resume-list li {
+  margin-bottom: 0.25rem;
+}
+
+/* Jobs */
+
+.resume-job {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.resume-job::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.25rem;
+  bottom: -0.25rem;
+  width: 2px;
+  background-color: #d0d8e4;
+}
+
+.resume-job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.8rem;
+  padding: 0.75rem 1rem;
+  background-color: #343a46;
+  border-radius: 12px;
+}
+
+.resume-job-company {
+  margin: 0;
+  font-weight: 700;
+  color: #d5e0f4;
+}
+
+.resume-job-title {
+  margin: 0.1rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #c0cadc;
+}
+
+.resume-job-dates {
+  margin: 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #c7d0e0;
+}
+
+/* Responsive */
+
+@media (max-width: 840px) {
+  .resume-body {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-sidebar,
+  .resume-main {
+    padding: 1.5rem;
+  }
+
+  .resume {
+    margin: 1.5rem auto;
+  }
+}
